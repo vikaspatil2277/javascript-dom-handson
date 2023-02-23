@@ -9,6 +9,7 @@ let random=generaterandomnumber(100);
 function generaterandomnumber(max){
     return Math.floor(Math.random()*max) + 1
 }
+console.log(random);
 
 function check(){
 let currentnumber =    document.getElementById("guessid").value;
@@ -21,14 +22,14 @@ if(currentnumber>random){
 }
 
 else if(currentnumber<random){
-    document.querySelector(".message").textContent="Your guess is low!!!"
+    document.querySelector(".message").textContent=" Your guess is low!!!"
     initialvalue--;
     document.querySelector(".score").textContent=initialvalue;
 
 }
 
 else{
-    document.querySelector(".message").textContent="winner winner mutton khalo!!"
+    document.querySelector(".message").textContent="winner winner!!"
     initialvalue--;
     document.querySelector(".score").textContent=initialvalue;
     highscore=initialvalue;
@@ -52,13 +53,15 @@ else{
 }
 
 
-document.querySelector(".playagain").addEventListener("click",play)
 
 function play(){
+    document.querySelector(".playagain")
     document.querySelector(".score").textContent=100;
     document.querySelector(".highscore").textContent=00;
     document.querySelector("#guessid").value="";
+    document.querySelector(".check").textContent="check";
     document.querySelector(".resultbox").textContent="?";
-    document.querySelector("body").style.backgroundColor=rgb(50, 11, 11);
+    document.querySelector(".message").textContent="start guessing...";
+    document.querySelector("body").style.backgroundColor="rgb(50, 11, 11)";
     console.log("play");
   }
